@@ -8,8 +8,19 @@ def CompareIO(pathInputFile, pathOutputFile):
 	
 	
 def Text2Image(pathFile, width, height, pxImg):
+	textImage = open( pathFile, "r" )
 	
-
+    for x in range(width):
+        for y in range(height):
+			# read from text file RGB pixels
+			r = textImage.readline()
+			g = textImage.readline()
+			b = textImage.readline()
+			
+            # get RGB pixels value from image
+            pxImg[y][x] = (r, g, b)
+	
+	textImage.close()
 
 def Image2Text( pxImg, width, height, pathFile ):
 	textImage = open( pathFile, "w" )
@@ -21,7 +32,9 @@ def Image2Text( pxImg, width, height, pathFile ):
             (r, g, b) = pxImg[y][x]
 			
 			# write in text file RGB pixels
-			textImage.write("%d %d %d" % r, g, b)
+			textImage.write("%d\n%d\n%d\n" % r, g, b)
+	
+	textImage.close()
 
 def End2EndTest( pathImg ):
     # print the path for input image
