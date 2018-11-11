@@ -8,7 +8,7 @@ def CSC(pathOutputFile, pathOutputFileReverseCSC, width, height):
     
     for i in range(width):
         for j in range(height):
-            # read from text file RGB pixels
+            # read from text file XYZ pixels
             x = textImage.readline()
             y = textImage.readline()
             z = textImage.readline()
@@ -145,7 +145,8 @@ def End2EndTest( pathImg ):
     #iImg.show()
 
 # Start test for each type of image
-End2EndTest("Images/VGA.png")
+End2EndTest("Images/Parrots.bmp")
+#End2EndTest("Images/VGA.png")
 #End2EndTest("Images/HD.png")
 #End2EndTest("Images/FHD.png")
 #End2EndTest("Images/QHD.png")
