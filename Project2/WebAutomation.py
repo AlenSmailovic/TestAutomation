@@ -50,7 +50,7 @@ tracks = trackTable.find_elements_by_class_name('track_row_view')
 for track in tracks:
 	# Get track name
 	trackName = track.find_element_by_class_name('title')
-	# Check if it's out track
+	# Check if it's our track
 	if trackName.text.find(TRACK) != -1:
 		print("Track found..")
 		# Play music :)
